@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong><br>
+  <%= @saving.category %>
+</p>
+
+<p>
+  <strong>Amount:</strong><br>
+  <%= @saving.amount %>
+</p>
+
+<%= link_to 'Edit', edit_goal_saving_path(@saving.goal, @saving) %> |
+<%= link_to 'Back', goal_savings_path(@saving.goal) %>

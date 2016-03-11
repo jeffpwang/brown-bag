@@ -1,0 +1,18 @@
+<%= form_for ([@goal, @saving]) do |f| %>
+
+  <div class="saving_field">
+    <%= f.label :category  %><br /> 
+    <%= f.text_field :category %>
+  </div>
+
+  <div class="saving_field">
+    <%= f.label :amount %><br /> 
+    <%= f.text_field :amount %>
+  </div>
+
+  <div class="actions">
+   <%= f.submit %> 
+  </div>
+
+<% end %>
+ 

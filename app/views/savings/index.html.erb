@@ -1,0 +1,23 @@
+<h1>Listing of savings</h1>
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Amount</th>
+    <th>Options</th>
+  </tr>
+
+  <% @savings.each do |saving| %>
+    <tr>
+      <td><%= saving.category %></td>
+      <td><%= saving.amount %></td>
+      <td><%= link_to 'Show', [saving.goal, saving] %></td>
+      <td><%= link_to 'Edit', edit_goal_saving_path(saving.goal, saving) %></td>
+      <td><%= link_to 'Destroy', [saving.goal, saving], :confirm => "Are you sure?", :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br /> 
+
+<%= link_to 'New Saving', new_goal_saving_path %> | 
+<%= link_to 'Goal', goal_path(@goal) %>
