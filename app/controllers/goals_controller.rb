@@ -4,16 +4,21 @@
 #
 #  id            :integer          not null, primary key
 #  name          :string
-#  goal_amount   :integer
-#  saved_amount  :integer
-#  goal_progress :integer
-#  goal_met      :boolean
+#  goal_amount   :decimal(10, 2)
+#  saved_amount  :decimal(10, 2)   default(0.0)
+#  goal_progress :integer          default(0)
+#  goal_met      :boolean          default(FALSE)
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  user_id       :integer
 #
 
 class GoalsController < ApplicationController
+  before_filter :current_user
+
+  def current_user
+    @current_user = @current_user || User.find_by(id: session[:user_id])
+  end 
 
   def index
     @goals = Goal.all

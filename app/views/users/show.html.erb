@@ -1,2 +1,9 @@
 <h1><%= @user.name %></h1><br>
-...goals will be inserted here along with links to those goals
+
+<% if @user.goals.empty? %>
+  <h1>You have no goals right now. <a href="<%= new_goal_path %>">Start making goals!</a></h1>
+<% else %>
+  <% @user.goals.each do |goal| %>
+    <%= goal.name %>
+  <% end %>
+<% end %>

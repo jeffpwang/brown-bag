@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  category   :string
-#  amount     :integer
+#  amount     :decimal(5, 2)
 #  goal_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
